@@ -36,7 +36,7 @@ class NCEData(object):
     """
     # code inspired by parallel generators in https://github.com/fchollet/keras
     def __init__(self, dataset, batch_size, context_size,
-                 num_noise_words, max_size, num_workers):
+                 num_noise_words, max_size, num_workers, vocab_='content'):
         self.max_size = max_size
 
         self.num_workers = num_workers if num_workers != -1 else os.cpu_count()
@@ -48,7 +48,8 @@ class NCEData(object):
             batch_size,
             context_size,
             num_noise_words,
-            _NCEGeneratorState(context_size))
+            _NCEGeneratorState(context_size),
+            vocab_='content')
 
         self._queue = None
         self._stop_event = None
