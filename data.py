@@ -49,7 +49,7 @@ class NCEData(object):
             context_size,
             num_noise_words,
             _NCEGeneratorState(context_size),
-            vocab_='content')
+            vocab_)
 
         self._queue = None
         self._stop_event = None
@@ -121,7 +121,7 @@ class _NCEGenerator(object):
     For other parameters see the NCEData class.
     """
     def __init__(self, dataset, batch_size, context_size,
-                 num_noise_words, state, vocab_ = 'content'):
+                 num_noise_words, state, vocab_ ):
         self.dataset = dataset
         self.batch_size = batch_size
         self.context_size = context_size
