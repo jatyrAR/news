@@ -148,7 +148,7 @@ class DMemb(nn.Module):
             for keyv, valuev in vectors.stoi.items():
               word = keyv.lower()
               if word == key:
-                print(key, keyv)
+                #print(key, keyv)
                 self._W.weight[value,:] =  vectors.vectors[vectors.stoi[keyv],:]
 
         # output layer parameters
