@@ -57,7 +57,7 @@ def _tokenize_str(str_): #preprocess text
     # punctations to tokens
     str_ = re.sub(r'\(', ' ( ', str_)
     str_ = re.sub(r'\)', ' ) ', str_) #rajoute des espace autour des parentheses
-    str_ = re.sub(r',', ' , ', str_)
+    str_ = re.sub(r',', ' ', str_)
     str_ = re.sub(r'\.', ' . ', str_)
     str_ = re.sub(r'!', ' ! ', str_)
     str_ = re.sub(r'\?', ' ? ', str_)
@@ -70,6 +70,7 @@ def _tokenize_str(str_): #preprocess text
     str_ = re.sub(r'\'ll', ' \'ll', str_)
     # lower case
     return str_.strip().lower().split()
+
 
 def _run(dataset,
          data_generator,

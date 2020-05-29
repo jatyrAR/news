@@ -120,13 +120,13 @@ class _NCEGenerator(object):
     For other parameters see the NCEData class.
     """
     def __init__(self, dataset, batch_size, context_size,
-                 num_noise_words, state):
+                 num_noise_words, state, vocab_ = 'content'):
         self.dataset = dataset
         self.batch_size = batch_size
         self.context_size = context_size
         self.num_noise_words = num_noise_words
 
-        self._vocabulary = self.dataset.fields['content'].vocab
+        self._vocabulary = self.dataset.fields[vocab_].vocab
         self._sample_noise = None
         self._init_noise_distribution()
         self._state = state
